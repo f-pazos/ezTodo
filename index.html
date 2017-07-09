@@ -2,7 +2,9 @@
 <html lang="en-US">
 
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-     
+    
+<link rel="stylesheet" type="text/css" href="style.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
@@ -17,14 +19,46 @@
 <body>
 
 <div ng-app="myApp" ng-controller="myCtrl" id="popupContainer" >
-	<ul ng-repeat="todo in todos">
+	<div id= "logo"> THE LOGO WILL BE HERE</div>
+	<div id= "menu"> SOME ICONS OVA HERE</div>
 
-		<h1>{{todo.title}}</h1>
-		<p>{{todo.description}}</p>
-		<p>{{todo.deadline}}</p>
-	</ul>
+	<div id= "newTodo">
+		<div id="newTodoCont">
+			<md-button id="newTodoButton" class="md-primary md-raised" ng-click="showNewTodoPrompt( $event )">Add a Todo: (This is for a test commit )</md-button>
+		</div>
+	</div>
 
-	<md-button class="md-primary md-raised" ng-click="showAlert( $event )">Litty</md-button>
+	<div id= "todoList">
+		<div class="todo" ng-repeat="todo in todos">
+
+			<div class="todoCheckboxCont">
+			chkbox
+			</div>
+
+			<div class="todoContents">
+				<div class="todoTitle">
+					<h1>{{todo.title}}</h1>
+				</div>
+
+				<div class="todoDescription">
+					<p>{{todo.description}}</p>
+				</div>
+
+				<div class="todoDeadline">
+					<p>{{todo.deadline}}</p>
+				</div>
+			</div>
+
+
+			<div class="todoButtons">Stuff</div>
+
+			<br style="clear:both;"/>
+
+		</div>
+	</div>
+	
+
+	
 
 </div>
 

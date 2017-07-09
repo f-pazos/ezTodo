@@ -1,0 +1,82 @@
+body, html {
+	border: 0;
+	margin: 0;
+}
+
+h1 {
+	margin: 2px;
+	font-size: 1.5em;
+
+}
+
+p {
+	margin: 0px;
+	font-size: .8em;
+
+}
+#logo {
+	float: left;
+	border: 1px solid blue;
+}
+#menu {
+	overflow: hidden;
+	border: 1px solid green;
+}
+
+/***** New Todo Button *****/
+
+#newTodo {
+	outline: 1px solid red;
+}
+
+#newTodoCont {
+	width: 50%;
+	margin: 0 auto;
+}
+#newTodoButton {
+	width: 100%;
+	background-color: red;
+
+}
+
+/***** Todo List Itself *****/
+
+.todo {
+	border: 1px solid black;
+	margin: 0 auto;
+	padding: 0px;
+	width: 80%;
+
+}
+
+.todoTitle {
+	border: 1px dotted red;
+}
+
+.todoDescription {
+	float: left;
+	width: 80%;
+	border: 1px dotted blue;
+}
+
+.todoDeadline {
+	overflow: hidden;
+	border: 1px dotted pink;
+}
+.todoCheckboxCont {
+	border: 1px dotted black;
+	width: 10%;
+	height: 100%;
+	float: left;
+	overflow:hidden;
+}
+.todoContents {
+	border: 1px solid pink;
+	width: 80%;
+	float: left;
+}
+.todoButtons {
+	border: 1px solid orange;
+	overflow:hidden;
+}
+
