@@ -33,6 +33,9 @@ app.controller('myCtrl', function($scope, $mdDialog) {
 	};
 
 	function DialogController( $scope, $mdDialog ) {
+		$scope.helloWorld = function() {
+			console.log( "hello world" )
+		}
 		$scope.hide = function(){
 			$mdDialog.hide();
 		};
