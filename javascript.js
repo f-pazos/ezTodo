@@ -12,40 +12,22 @@ app.controller('myCtrl', function($scope, $mdDialog) {
 	$scope.todos.push( {title: "asldkfj", description: "a;sldkjfads", deadline: "a;sdlkfjasdf" } )
 
 	$scope.addTodo = function(){
-		console.log( "test" );
-		$scope.todos[0].title = "yay you did";
+		if( !$scope.newTitle){ 
+			return; 
+		}
+		$scope.todos.push( {title: $scope.newTitle, description: $scope.newDescription, deadline: $scope.newDeadline } )
+
+		$scope.newTitle =""
+		$scope.newDescription =""
+		$scope.newDeadline=""
+
+		document.getElementById("newTodoTitle").focus();
 	}
 
-	$scope.showNewTodoPrompt = function( ev ){
-		$mdDialog.show( {
-			controller: DialogController,
-			templateUrl: 'newTodoTemp.html',
-			parent: angular.element( document.body ),
-			targetEvent: ev, 
-			clickOutsideToClose: true,
-			fullscreen: $scope.customeFullscreen 
-			})
-			.then( function( answer ) {
-				$scope.status = 'You said the informtion was " ' + answer + '". ';
-			}, function() {
-				$scope.status = "you cancelled the dialog.";
-			});
-	};
+	$scope.removeTodo = function( todo ){
+		console.log( todo );
 
-	function DialogController( $scope, $mdDialog ) {
-		$scope.helloWorld = function() {
-			console.log( "hello world" )
-		}
-		$scope.hide = function(){
-			$mdDialog.hide();
-		};
-
-		$scope.cancel = function() {
-			$mdDialog.cancel();
-		};
-
-		$scope.answer = function( answer ) {
-			$mdDialog.hide( answer );
-		}
+		var index = $scope.todos.indexOf( todo );
+		$scope.todos.splice( index, 1 )
 	}
 });

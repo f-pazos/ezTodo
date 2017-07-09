@@ -24,7 +24,22 @@
 
 	<div id= "newTodo">
 		<div id="newTodoCont">
-			<md-button id="newTodoButton" class="md-primary md-raised" ng-click="showNewTodoPrompt( $event )">Testing some stuff</md-button>
+			Title: 
+			<input id="newTodoTitle" type="text" ng-model="newTitle">
+			<br>
+
+			Description:
+			<input id="newTodoDescription" type="text" ng-model="newDescription">
+			<br>
+
+			Deadline:
+			<input id="newTodoDeadline"
+			type="text" ng-model="newDeadline">
+			<br>
+
+			<button id="addTodo" ng-click="addTodo()">
+				Add Todo
+			</button>
 		</div>
 	</div>
 
@@ -50,7 +65,10 @@
 			</div>
 
 
-			<div class="todoButtons">Stuff</div>
+			<div class="todoButtons">
+				<button ng-click="removeTodo( todo )">
+				G</button>
+			</div>
 
 			<br style="clear:both;"/>
 
